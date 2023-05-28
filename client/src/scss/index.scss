@@ -1,6 +1,9 @@
 @use './components/wrapper';
 @use "./abstracts/forward" as *;
 
+$coffee-img: 'https://images.unsplash.com/photo-1626790477331-add9bde2fdce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80';
+
+
 .show {
     opacity: 1;
     pointer-events: all;
@@ -470,7 +473,13 @@ section {
 
     #coffee {
         position: relative;
-        width: 288px;
+        min-width: 600px;
+        height: 60%;
+        border-radius: 42% 56% 32% 28% / 55% 42% 50% 46%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+        background: url($coffee-img);
+        background-size: cover;
+        background-position: 70% 50%;
       }
       
       .cup {
@@ -536,7 +545,7 @@ section {
         left: 50%;
         transform: translateX(-50%);
         // width: 500px;
-        width: 100%;
+        min-width: 70%;
         height: 200px;
         background: linear-gradient(to right, $cup-light, $plate-shadow);
         border-radius: 50%;
