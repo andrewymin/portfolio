@@ -1,9 +1,22 @@
 import React from 'react';
 import Typed from 'typed.js';
-import { useRef } from 'react';
+import { useRef, useEffect, useLayoutEffect } from 'react';
 import Topbutton from './Topbutton';
 
 function Home(props) {
+
+    const app = useRef();
+    useLayoutEffect(() => {
+      let ctx = gsap.context(() => {
+        // use scoped selectors
+        gsap.fromTo('.about-me',
+        {opacity: 0, x: -350},
+        {duration: 1, opacity: 1, x: 0},
+        );
+      }, app);
+      
+      return () => ctx.revert();
+    }, []);
 
     var options = {
         strings: [
@@ -24,7 +37,7 @@ function Home(props) {
 
     const el = useRef(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
       const typed = new Typed(el.current, options);
   
       return () => {
@@ -34,7 +47,7 @@ function Home(props) {
     }, []);
 
     return (
-        <section id='intro'>
+        <section ref={app} id='intro'>
             <div className='opening1'>
               <div className='about-me'>
                 <h1>Welcome<br />I'm a <br /><span ref={el} /></h1>
