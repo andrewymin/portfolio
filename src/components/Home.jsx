@@ -2,6 +2,7 @@ import React from 'react';
 import Typed from 'typed.js';
 import { useRef, useEffect, useLayoutEffect } from 'react';
 import Topbutton from './Topbutton';
+import gsap from 'gsap';
 
 function Home(props) {
 
@@ -9,10 +10,11 @@ function Home(props) {
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
         // use scoped selectors
-        gsap.fromTo('.about-me',
-        {opacity: 0, x: -350},
-        {duration: 1, opacity: 1, x: 0},
-        );
+        gsap.fromTo(
+          '.about-me',
+          {opacity: 0, x: -350},
+          {duration: 1, opacity: 1, x: 0},
+        )
       }, app);
       
       return () => ctx.revert();
@@ -21,15 +23,14 @@ function Home(props) {
     var options = {
         strings: [
           "Developer",
-          "Programmer",
+          "Programmer", 
           // "Thinker",
           "Freelancer",
-          // "Gamer",
+          // "Gamer", 
           // "Explorer",
           // "Puzzler",
           // "Creator",
         ],
-        // strings: ["Test"],
         typeSpeed: 140,
         backSpeed: 150,
         loop: true

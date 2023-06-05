@@ -38,22 +38,19 @@ section {
     position: absolute;
     align-items: center;
     top: 79px;
-    right: 11%;
+    // right: 11%; // on larger screens
+    right: 3%; // on med screens
     height: 47%;
 
     :nth-child(1) {
         grid-column: 2;
+        position: relative;
     }
 
     :nth-child(2) {
         grid-row: 2;
-        padding: 0 15px;
-    }
-
-    :nth-child(3) {
-        grid-column: 2;
-        grid-row: 3;
-        padding: 0 15px;
+        // padding: 0 15px;
+        position: relative;
     }
 
     a {
@@ -63,13 +60,141 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        span {
+            transition: 1s;
+            margin: 0 6px;
+        }
     }
 
-    a:hover {
-        background-color: $redWood;
-        color: $white;
-        border-radius: 15px;
+
+    .link1 {
+
+        a::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: $redWood;
+            // transition: 1s;
+        }
+
+        .arrow {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-top: 3px solid $bark;
+            border-right: 3px solid $bark;
+            transform: translate(-50%,-50%) rotate(45deg);
+            top: 25px;
+            left: 35px;
+            // right: 0;
+            transition: 1s;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .arrow::before {
+            content: '';
+            position: absolute;
+            // width: 25px;
+            width: 0;
+            height: 3px;
+            background-color: $bark;
+            // border-top: 3px solid $bark;
+            transform: rotate(-45deg);
+            left: 7px;
+            top: 9px;
+            pointer-events: none;
+            transition: 1s;
+        }
+    
     }
+
+    .link1:hover {
+        
+        a span {
+            transform: translateX(18px);
+        }
+
+        a::before {
+            filter: brightness(0.90);
+        }
+
+        .arrow {
+            left: 74px;
+        }
+
+        .arrow::before {
+            width: 25px;
+            left: -4px;
+            top: 7px;
+        }
+
+    }
+
+    .link2 {
+
+        a::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: $redWood;
+        }
+
+        .arrow {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-bottom: 3px solid $bark;
+            border-left: 3px solid $bark;
+            transform: translate(-50%,-50%) rotate(45deg);
+            top: 25px;
+            right: 0;
+            transition: 1s;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            // width: 25px;
+            width: 0;
+            height: 3px;
+            background-color: $bark;
+            // border-top: 3px solid $bark;
+            transform: rotate(-45deg);
+            left: 7px;
+            top: 9px;
+            pointer-events: none;
+            transition: 1s;
+        }
+    
+    }
+
+    .link2:hover {
+        
+        a span {
+            transform: translateX(-18px);
+        }
+
+        a::after {
+            filter: brightness(0.90);
+        }
+
+        .arrow {
+            right: 35px;
+        }
+
+        .arrow::after {
+            width: 25px;
+            left: -4px;
+            top: 7px;
+        }
+    }
+
 }
 
 #intro {

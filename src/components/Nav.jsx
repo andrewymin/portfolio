@@ -1,16 +1,43 @@
 import React from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
-
+import gsap from 'gsap';
 
 function Nav(props) {
+
+    const app = useRef();
+
+    useLayoutEffect(() => {
+      let ctx = gsap.context(() => {
+        // use scoped selectors
+        gsap.fromTo(
+          '.link1',
+          {opacity: 0, y: -100},
+          {duration: 1, opacity: 1, y: 0, delay: 1},
+        );
+        gsap.fromTo(
+          '.link2',
+          {opacity: 0, y: -200},
+          {duration: 1.75, opacity: 1, y: 0, delay: 1.8},
+          );
+      }, app);
+      
+      return () => ctx.revert();
+    }, []);
+
     return (
-        <nav id="mainNav">
-            {/* <HashLink smooth to='#'>Home</HashLink> */}
-            <HashLink smooth to='#work'>Work</HashLink>
-            {/* <HashLink smooth to='#about'>About</HashLink> */}
-            <HashLink smooth to='#contact'>Contact</HashLink>
-            {/* <HashLink smooth to='#social'>Github</HashLink> */}
-        </nav>
+        <div ref={app}>
+            <nav id="mainNav">
+              <div className='link1'>
+                <div className="arrow"></div>
+                <HashLink smooth to='#work'><span>Work</span></HashLink>
+              </div>
+              <div className='link2'>
+                <HashLink smooth to='#contact'><span>Contact</span></HashLink>
+                <div className="arrow"></div>
+              </div>
+            </nav>
+        </div>
     );
 }
 

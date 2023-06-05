@@ -14,15 +14,7 @@ function App(props) {
             <Nav />
             <Home />
             <Work />
-            {/* <About /> */}
             <Contact />
-            {/* <Routes>
-                <Route path="/work" element={<Work/>} />
-                <Route path="/" element={<Home/>} />
-                <Route path="/about" element={<About/>} />
-                <Route path="/contact" element={<Contact/>} />
-                <Route path="/social" element={<Social/>} />
-            </Routes> */}
         </BrowserRouter>
     );
 }
