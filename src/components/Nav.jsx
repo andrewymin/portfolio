@@ -12,13 +12,13 @@ function Nav(props) {
         // use scoped selectors
         gsap.fromTo(
           '.link1',
-          {opacity: 0, y: -100},
-          {duration: 1, opacity: 1, y: 0, delay: 1},
+          {opacity: 0, x: -100},
+          {duration: 1, opacity: 1, x: 0, delay: 1},
         );
         gsap.fromTo(
           '.link2',
-          {opacity: 0, y: -200},
-          {duration: 1.75, opacity: 1, y: 0, delay: 1.8},
+          {opacity: 0, x: 100},
+          {duration: 1.75, opacity: 1, x: 0, delay: 1.8},
           );
       }, app);
       
@@ -26,8 +26,8 @@ function Nav(props) {
     }, []);
 
     return (
-        <div ref={app}>
-            <nav id="mainNav">
+        <div id="mainNav" ref={app}>
+            <nav className='menu'>
               <div className='link1'>
                 <div className="arrow"></div>
                 <HashLink smooth to='#work'><span>Work</span></HashLink>

@@ -11,7 +11,7 @@ import CursorTrail from './components/CursorTrail';
 function App(props) {
     return (
         <BrowserRouter>
-            <Nav />
+            {/* <Nav /> */}
             <Home />
             <Work />
             <Contact />

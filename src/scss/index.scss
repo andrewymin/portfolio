@@ -33,218 +33,241 @@ section {
 }
 
 #mainNav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    position: absolute;
-    align-items: center;
-    top: 79px;
-    // right: 11%; // on larger screens
-    right: 3%; // on med screens
-    height: 47%;
+    display: flex;
+    justify-content: center;
 
-    :nth-child(1) {
-        grid-column: 2;
-        position: relative;
-    }
-
-    :nth-child(2) {
-        grid-row: 2;
-        // padding: 0 15px;
-        position: relative;
-    }
-
-    a {
-        font-size: 2rem;
-        text-decoration: none;
-        color: $bark;
-        display: flex;
-        justify-content: center;
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
-
-        span {
-            transition: 1s;
-            margin: 0 6px;
-        }
-    }
-
-
-    .link1 {
-
-        a::before {
-            content: '';
-            width: 50px;
-            height: 50px;
-            background-color: $redWood;
-            // transition: 1s;
-        }
-
-        .arrow {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-top: 3px solid $bark;
-            border-right: 3px solid $bark;
-            transform: translate(-50%,-50%) rotate(45deg);
-            top: 25px;
-            left: 35px;
-            // right: 0;
-            transition: 1s;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .arrow::before {
-            content: '';
-            position: absolute;
-            // width: 25px;
-            width: 0;
-            height: 3px;
-            background-color: $bark;
-            // border-top: 3px solid $bark;
-            transform: rotate(-45deg);
-            left: 7px;
-            top: 9px;
-            pointer-events: none;
-            transition: 1s;
+        width: 336px;
+        height: 100%;
+    
+        :nth-child(1) {
+            position: relative;
         }
     
-    }
-
-    .link1:hover {
-        
-        a span {
-            transform: translateX(18px);
-        }
-
-        a::before {
-            filter: brightness(0.90);
-        }
-
-        .arrow {
-            left: 74px;
-        }
-
-        .arrow::before {
-            width: 25px;
-            left: -4px;
-            top: 7px;
-        }
-
-    }
-
-    .link2 {
-
-        a::after {
-            content: '';
-            width: 50px;
-            height: 50px;
-            background-color: $redWood;
-        }
-
-        .arrow {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-bottom: 3px solid $bark;
-            border-left: 3px solid $bark;
-            transform: translate(-50%,-50%) rotate(45deg);
-            top: 25px;
-            right: 0;
-            transition: 1s;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .arrow::after {
-            content: '';
-            position: absolute;
-            // width: 25px;
-            width: 0;
-            height: 3px;
-            background-color: $bark;
-            // border-top: 3px solid $bark;
-            transform: rotate(-45deg);
-            left: 7px;
-            top: 9px;
-            pointer-events: none;
-            transition: 1s;
+        :nth-child(2) {
+            grid-column: 2;
+            grid-row: 2;
+            position: relative;
         }
     
-    }
-
-    .link2:hover {
+        a {
+            font-size: 2rem;
+            text-decoration: none;
+            color: $bark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            span {
+                transition: 1s;
+                margin: 0 6px;
+            }
+        }
+    
+    
+        .link1 {
+    
+            a::before {
+                content: '';
+                width: 50px;
+                height: 50px;
+                background-color: $redWood;
+            }
+    
+            .arrow {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-top: 3px solid $bark;
+                border-right: 3px solid $bark;
+                transform: translate(-50%,-50%) rotate(45deg);
+                top: 25px;
+                left: 35px;
+                // right: 0;
+                transition: 1s;
+                z-index: 1;
+                pointer-events: none;
+            }
+    
+            .arrow::before {
+                content: '';
+                position: absolute;
+                // width: 25px;
+                width: 0;
+                height: 3px;
+                background-color: $bark;
+                // border-top: 3px solid $bark;
+                transform: rotate(-45deg);
+                left: 7px;
+                top: 9px;
+                pointer-events: none;
+                transition: 1s;
+            }
         
-        a span {
-            transform: translateX(-18px);
         }
-
-        a::after {
-            filter: brightness(0.90);
+    
+        .link1:hover {
+            
+            a span {
+                transform: translateX(18px);
+            }
+    
+            a::before {
+                filter: brightness(0.90);
+            }
+    
+            .arrow {
+                left: 70px;
+            }
+    
+            .arrow::before {
+                width: 25px;
+                left: -4px;
+                top: 7px;
+            }
+    
         }
-
-        .arrow {
-            right: 35px;
+    
+        .link2 {
+    
+            a::after {
+                content: '';
+                width: 50px;
+                height: 50px;
+                background-color: $redWood;
+            }
+    
+            .arrow {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-bottom: 3px solid $bark;
+                border-left: 3px solid $bark;
+                transform: translate(-50%,-50%) rotate(45deg);
+                top: 25px;
+                right: 0;
+                transition: 1s;
+                z-index: 1;
+                pointer-events: none;
+            }
+    
+            .arrow::after {
+                content: '';
+                position: absolute;
+                // width: 25px;
+                width: 0;
+                height: 3px;
+                background-color: $bark;
+                // border-top: 3px solid $bark;
+                transform: rotate(-45deg);
+                left: 7px;
+                top: 9px;
+                pointer-events: none;
+                transition: 1s;
+            }
+        
         }
-
-        .arrow::after {
-            width: 25px;
-            left: -4px;
-            top: 7px;
+    
+        .link2:hover {
+            
+            a span {
+                transform: translateX(-18px);
+            }
+    
+            a::after {
+                filter: brightness(0.90);
+            }
+    
+            .arrow {
+                right: 35px;
+            }
+    
+            .arrow::after {
+                width: 25px;
+                left: -4px;
+                top: 7px;
+            }
         }
+    
     }
 
 }
 
+
+
 #intro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
     .about-me {
         width: 50vw;
-    }
+        margin-left: 3rem;
+        margin-top: 3rem;
 
-    .opening1 {
-        position: absolute;
-        top: 80px;
-        left: 40px;
+        p {
+            margin-top: 3rem;
+            width: 80%;
+        }
     }
 
     .social {
         display: flex;
-        gap: 55px;
-        margin-top: 35px;
-        
-        > * {
-            font-size: 3rem;
-            cursor: pointer;
-            color: $bark;
+        height: 100%;
+        justify-content: start;
+        align-items: flex-end;
 
-            :hover {
-                color: $redWood;
+        .platforms {
+            margin-bottom: 3rem;
+            display: flex;
+            margin-left: 3rem;
+            gap: 10rem;
+            width: 100%;
+
+            :nth-child(2) {
+                transform: translateY(-56px);
+            }
+            
+            > * {
+                font-size: 3rem;
+                cursor: pointer;
+                color: $bark;
+
+                :hover {
+                    color: $redWood;
+                }
+
             }
 
-        }
 
+            :last-child{
+                position: relative;
 
-        :last-child{
-
-            position: relative;
-
-            ::after {
-                content: "resume";
-                font-size: 1rem;
-                position: absolute;
-                letter-spacing: 2px;
-                bottom: -20px;
-                left: -50%;
+                ::after {
+                    content: "resume";
+                    font-size: 1rem;
+                    position: absolute;
+                    letter-spacing: 2px;
+                    bottom: -20px;
+                    left: -50%;
+                }
             }
         }
     }
 
-    .opening2 {
-        bottom: 35px;
-        right: 20px;
-        position: absolute;
+
+    .title {
+        margin-right: 1.5rem;
+
+        .name {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
 
         h4 {
             text-align: right;
