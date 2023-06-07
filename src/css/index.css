@@ -10,6 +10,43 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 880px) {
+  body h1 {
+    font-size: 3rem;
+  }
+  body #intro .about-me {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  body #intro .social {
+    margin-left: 1rem;
+    min-width: 210px;
+  }
+  body #intro .social .platforms :nth-child(1) {
+    top: -8rem;
+  }
+  body #intro .social .platforms :nth-child(2) {
+    top: -8rem;
+  }
+  body #intro .social .platforms :nth-child(3) {
+    top: -7rem;
+    right: -1.5rem;
+  }
+  body #intro .title {
+    margin-right: 1rem;
+  }
+  body #intro .menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    height: 50%;
+    margin-top: 10rem;
+    scale: 0.8;
+  }
+  body #intro .menu .link2 {
+    grid-column: 1;
+  }
+}
 .show {
   opacity: 1;
   pointer-events: all;
@@ -46,7 +83,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  width: 336px;
+  max-width: 336px;
   height: 85%;
 }
 #mainNav .menu :nth-child(1) {
@@ -174,7 +211,7 @@ section {
 #intro .about-me p {
   margin-top: 3rem;
   width: 80%;
-  min-width: 450px;
+  min-width: 200px;
 }
 #intro .social {
   min-width: 470px;
@@ -183,7 +220,7 @@ section {
   margin-left: 3rem;
 }
 #intro .social .platforms :nth-child(1) {
-  bottom: 1rem;
+  bottom: 2.5rem;
 }
 #intro .social .platforms :nth-child(2) {
   top: -5rem;
@@ -198,15 +235,15 @@ section {
   align-items: center;
   text-decoration: none;
 }
+#intro .social .platforms :nth-child(3)::after {
+  content: "Resume";
+  font-size: 1.5rem;
+}
 #intro .social .platforms a {
   position: absolute;
   font-size: 3rem;
   cursor: pointer;
   color: rgb(66, 54, 54);
-}
-#intro .social .platforms :nth-child(3)::after {
-  content: "Resume";
-  font-size: 1.5rem;
 }
 #intro .social .platforms a:hover {
   color: rgb(219, 45, 72);
@@ -301,27 +338,6 @@ section {
   height: 21px;
   background: linear-gradient(to top, rgb(66, 54, 54), transparent);
   z-index: 1;
-}
-
-#about {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-#about .skill-logos {
-  width: 50vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#about .about-me {
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 4.5rem;
-  gap: 1rem;
 }
 
 #about::before {

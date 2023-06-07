@@ -28,7 +28,7 @@ function Work(props) {
                     </nav>
                     <div className='projects container-fluid'>
                         {works.map((project, index)=>
-                            <div key={index} className={`col-md-6 col-lg-4 col-sm-12 col-xs-12 ${project.codeType}`}>
+                            <div key={index} className={`col-md-6 col-xl-4 col-sm-12 col-xs-12 ${project.codeType}`}>
                                 <div className='project'  onClick={()=>{
                                     document.querySelector('#overlay').classList.add('active');
                                     setOpenModal({

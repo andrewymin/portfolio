@@ -1,4 +1,5 @@
 @use './components/wrapper';
+@use './components/media';
 @use "./abstracts/forward" as *;
 
 $coffee-img: 'https://images.unsplash.com/photo-1626790477331-add9bde2fdce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80';
@@ -40,7 +41,7 @@ section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
-        width: 336px;
+        max-width: 336px;
         height: 85%;
     
         :nth-child(1) {
@@ -212,8 +213,7 @@ section {
         p {
             margin-top: 3rem;
             width: 80%;
-            min-width: 450px;
-
+            min-width: 200px;
         }
     }
 
@@ -237,7 +237,7 @@ section {
 
             :nth-child(1) {
                 // transform: translateY(-1rem);
-                bottom: 1rem;
+                bottom: 2.5rem;
             }
 
             :nth-child(2) {
@@ -256,20 +256,23 @@ section {
                 align-items: center;
                 text-decoration: none;
             }
+
+            :nth-child(3)::after {
+                content: 'Resume';
+                font-size: 1.5rem;
+            }
             
             a {
                 position: absolute;
                 font-size: 3rem;
                 cursor: pointer;
                 color: $bark;
-            }
 
-            // a span {
-            //     font-size: 12px;
-            // }
-            :nth-child(3)::after {
-                content: 'Resume';
-                font-size: 1.5rem;
+                // :hover {
+                //     color: $redWood;
+                //     transform: translateY(-5px);
+                // }
+    
             }
 
             a:hover {
@@ -407,28 +410,28 @@ section {
     z-index: 1;
 }
 
-#about {
-    display: flex;
-    justify-content: center;
-    position: relative;
+// #about {
+//     display: flex;
+//     justify-content: center;
+//     position: relative;
 
-    .skill-logos {
-        width: 50vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+//     .skill-logos {
+//         width: 50vw;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
 
-    .about-me {
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0 4.5rem;
-        gap: 1rem;
-    }
-}
+//     .about-me {
+//         width: 50vw;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: flex-start;
+//         padding: 0 4.5rem;
+//         gap: 1rem;
+//     }
+// }
 
 #about::before {
     content: "";
