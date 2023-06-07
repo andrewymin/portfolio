@@ -7,6 +7,7 @@
 body {
   background-color: #e1dfdd;
   color: #000000;
+  overflow-x: hidden;
 }
 
 .show {
@@ -46,7 +47,7 @@ section {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   width: 336px;
-  height: 100%;
+  height: 85%;
 }
 #mainNav .menu :nth-child(1) {
   position: relative;
@@ -173,44 +174,47 @@ section {
 #intro .about-me p {
   margin-top: 3rem;
   width: 80%;
+  min-width: 450px;
 }
 #intro .social {
-  display: flex;
-  height: 100%;
-  justify-content: start;
-  align-items: flex-end;
-}
-#intro .social .platforms {
-  margin-bottom: 3rem;
-  display: flex;
+  min-width: 470px;
+  max-width: 40vw;
+  position: relative;
   margin-left: 3rem;
-  gap: 10rem;
-  width: 100%;
+}
+#intro .social .platforms :nth-child(1) {
+  bottom: 1rem;
 }
 #intro .social .platforms :nth-child(2) {
-  transform: translateY(-56px);
+  top: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
-#intro .social .platforms > * {
+#intro .social .platforms :nth-child(3) {
+  bottom: 1rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+#intro .social .platforms a {
+  position: absolute;
   font-size: 3rem;
   cursor: pointer;
   color: rgb(66, 54, 54);
 }
-#intro .social .platforms > * :hover {
+#intro .social .platforms :nth-child(3)::after {
+  content: "Resume";
+  font-size: 1.5rem;
+}
+#intro .social .platforms a:hover {
   color: rgb(219, 45, 72);
-}
-#intro .social .platforms :last-child {
-  position: relative;
-}
-#intro .social .platforms :last-child ::after {
-  content: "resume";
-  font-size: 1rem;
-  position: absolute;
-  letter-spacing: 2px;
-  bottom: -20px;
-  left: -50%;
+  transform: translateY(-5px);
 }
 #intro .title {
-  margin-right: 1.5rem;
+  margin-right: 3rem;
+  margin-bottom: 1rem;
 }
 #intro .title .name {
   position: absolute;

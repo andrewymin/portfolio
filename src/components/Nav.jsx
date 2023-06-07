@@ -13,12 +13,12 @@ function Nav(props) {
         gsap.fromTo(
           '.link1',
           {opacity: 0, x: -100},
-          {duration: 1, opacity: 1, x: 0, delay: 1},
+          {duration: 1, opacity: 1, x: 0, delay: 2.5},
         );
         gsap.fromTo(
           '.link2',
           {opacity: 0, x: 100},
-          {duration: 1.75, opacity: 1, x: 0, delay: 1.8},
+          {duration: 1.75, opacity: 1, x: 0, delay: 3.3},
           );
       }, app);
       

@@ -20,7 +20,7 @@ function Home(props) {
         gsap.fromTo(
           '.title',
           {opacity: 0, x: 100},
-          {duration: 1, opacity: 1, x: 0},
+          {duration: 1, opacity: 1, x: 0, delay: 1.3},
         )
       }, app);
       

@@ -41,7 +41,7 @@ section {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         width: 336px;
-        height: 100%;
+        height: 85%;
     
         :nth-child(1) {
             position: relative;
@@ -212,56 +212,91 @@ section {
         p {
             margin-top: 3rem;
             width: 80%;
+            min-width: 450px;
+
         }
     }
 
     .social {
-        display: flex;
-        height: 100%;
-        justify-content: start;
-        align-items: flex-end;
+        // display: flex;
+        // height: 100%;
+        // justify-content: start;
+        // align-items: flex-end;
+        min-width: 470px;
+        max-width: 40vw;
+        position: relative;
+        margin-left: 3rem;
 
         .platforms {
-            margin-bottom: 3rem;
-            display: flex;
-            margin-left: 3rem;
-            gap: 10rem;
-            width: 100%;
+            // margin-bottom: 3rem;
+            // display: flex;
+            // margin-left: 3rem;
+            // gap: 10rem;
+            // width: 100%;
+
+
+            :nth-child(1) {
+                // transform: translateY(-1rem);
+                bottom: 1rem;
+            }
 
             :nth-child(2) {
-                transform: translateY(-56px);
+                // transform: translateY(-7rem);
+                top: -5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            :nth-child(3) {
+                // transform: translateY(-1rem);
+                bottom: 1rem;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
             }
             
-            > * {
+            a {
+                position: absolute;
                 font-size: 3rem;
                 cursor: pointer;
                 color: $bark;
+            }
 
-                :hover {
-                    color: $redWood;
-                }
+            // a span {
+            //     font-size: 12px;
+            // }
+            :nth-child(3)::after {
+                content: 'Resume';
+                font-size: 1.5rem;
+            }
 
+            a:hover {
+                color: $redWood;
+                transform: translateY(-5px);
             }
 
 
-            :last-child{
-                position: relative;
+            // :last-child{
+            //     position: relative;
 
-                ::after {
-                    content: "resume";
-                    font-size: 1rem;
-                    position: absolute;
-                    letter-spacing: 2px;
-                    bottom: -20px;
-                    left: -50%;
-                }
-            }
+            //     ::after {
+            //         content: "resume";
+            //         font-size: 1rem;
+            //         position: absolute;
+            //         letter-spacing: 2px;
+            //         bottom: -20px;
+            //         left: -50%;
+            //     }
+            // }
         }
     }
 
 
     .title {
-        margin-right: 1.5rem;
+        margin-right: 3rem;
+        margin-bottom: 1rem;
 
         .name {
             position: absolute;
