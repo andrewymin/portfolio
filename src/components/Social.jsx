@@ -17,9 +17,9 @@ function Social(props) {
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
         // use scoped selectors
-        fadeUp('.platforms a:nth-child(1)', 100, 0, 3.3);
-        fadeUp('.platforms a:nth-child(2)', 100, 0, 2.5);
-        fadeUp('.platforms a:nth-child(3)', 100, 0, 3.3);
+        fadeUp('.platforms > div:nth-child(1)', 100, 0, 2.5);
+        fadeUp('.platforms > div:nth-child(2)', 50, 0, 2.9);
+        fadeUp('.platforms > div:nth-child(3)', 50, 0, 3.3);
       }, app);
       
       return () => ctx.revert();
@@ -28,9 +28,15 @@ function Social(props) {
     return (
         <div className='social' ref={app}>
             <div className='platforms'>
-                <a href="https://www.google.com"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.youtube.com"><i className="fa-brands fa-github"></i></a>
-                <a href="https://www.w3schools.com"><i className="fa-solid fa-file"></i></a>
+                <div>
+                    <a href="https://www.google.com"><i className="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com"><i className="fa-brands fa-github"></i></a>
+                </div>
+                <div>
+                    <a href="https://www.w3schools.com"><i className="fa-solid fa-file"></i></a>
+                </div>
             </div>
         </div>
     );

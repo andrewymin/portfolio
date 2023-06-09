@@ -15,22 +15,11 @@ body {
     font-size: 3rem;
   }
   body #intro .about-me {
-    margin-left: 1rem;
-    margin-top: 1rem;
+    padding: 1rem 0 0 1rem;
   }
   body #intro .social {
-    margin-left: 1rem;
+    padding-left: 1rem;
     min-width: 210px;
-  }
-  body #intro .social .platforms :nth-child(1) {
-    top: -8rem;
-  }
-  body #intro .social .platforms :nth-child(2) {
-    top: -8rem;
-  }
-  body #intro .social .platforms :nth-child(3) {
-    top: -7rem;
-    right: -1.5rem;
   }
   body #intro .title {
     margin-right: 1rem;
@@ -45,6 +34,31 @@ body {
   }
   body #intro .menu .link2 {
     grid-column: 1;
+  }
+  body #work .projects-nav {
+    flex-direction: column;
+  }
+  body #work .projects-nav .pn-item {
+    width: 340px;
+    margin: 0 auto;
+  }
+  body #work .modalContainer {
+    flex-direction: column;
+  }
+  body #work .modalContainer img {
+    width: 100%;
+    margin-top: 42px;
+  }
+  body #work .modalContainer .project-info {
+    padding: 0 8px;
+  }
+  body #work .modalContainer .project-info button {
+    right: 0;
+    top: 0;
+    border: none;
+  }
+  body #work .projects .project {
+    margin: 20px auto;
   }
 }
 .show {
@@ -202,45 +216,45 @@ section {
 #intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  overflow-x: hidden;
 }
 #intro .about-me {
   width: 50vw;
-  margin-left: 3rem;
-  margin-top: 3rem;
+  padding: 3rem 0 0 3rem;
 }
 #intro .about-me p {
   margin-top: 3rem;
   width: 80%;
-  min-width: 200px;
+  min-width: 171px;
 }
 #intro .social {
   min-width: 470px;
   max-width: 40vw;
   position: relative;
-  margin-left: 3rem;
+  padding-left: 3rem;
 }
-#intro .social .platforms :nth-child(1) {
-  bottom: 2.5rem;
-}
-#intro .social .platforms :nth-child(2) {
-  top: -5rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-#intro .social .platforms :nth-child(3) {
-  bottom: 1rem;
-  right: 0;
+#intro .social .platforms {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-decoration: none;
+  gap: 1rem;
+  align-items: start;
 }
-#intro .social .platforms :nth-child(3)::after {
+#intro .social .platforms :nth-child(3) {
+  padding-left: 4px;
+}
+#intro .social .platforms :nth-child(3) a {
+  position: relative;
+}
+#intro .social .platforms :nth-child(3) a::after {
   content: "Resume";
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 #intro .social .platforms a {
-  position: absolute;
   font-size: 3rem;
   cursor: pointer;
   color: rgb(66, 54, 54);
@@ -289,6 +303,7 @@ section {
   font-size: 1.5rem;
   font-weight: 600;
   padding-top: 20px;
+  padding-left: 0;
 }
 #work .pn-item {
   text-align: center;
@@ -316,15 +331,16 @@ section {
 }
 #work .projects .project {
   text-align: center;
-  margin: 20px;
   cursor: pointer;
   transition: all 0.3s;
+  max-width: 400px;
+  margin: 20px auto;
 }
 #work .projects .project:hover {
   transform: scale(1.05);
 }
 #work .projects img {
-  width: 400px;
+  width: clamp(320px, 100%, 400px);
   height: 210px;
   border-radius: 20px;
 }
@@ -384,7 +400,8 @@ section {
   transition: 200ms ease-in-out;
   border-radius: 10px;
   z-index: 10;
-  width: 600px;
+  min-width: 330px;
+  max-width: 600px;
   height: 420px;
   text-align: left;
   color: rgb(235, 227, 240);
@@ -403,7 +420,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
   gap: 1rem;
 }
 .modalContainer .project-info .project-about {

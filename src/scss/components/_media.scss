@@ -8,28 +8,29 @@
         #intro {
     
             .about-me {
-                margin-left: 1rem;
-                margin-top: 1rem;
+                 padding: 1rem 0 0 1rem;
+                // margin-left: 1rem;
+                // margin-top: 1rem;
             }
 
             .social {
-                margin-left: 1rem;
+                padding-left: 1rem;
                 min-width: 210px;
 
-                .platforms {
-                    :nth-child(1) {
-                        top: -8rem;
-                    }
+                // .platforms {
+                    // :nth-child(1) {
+                        // top: -8rem;
+                    // }
         
-                    :nth-child(2) {
-                        top: -8rem;
-                    }
+                    // :nth-child(2) {
+                        // top: -8rem;
+                    // }
         
-                    :nth-child(3) {
-                        top: -7rem;
-                        right: -1.5rem;
-                    }
-                }
+                    // :nth-child(3) {
+                        // top: -7rem;
+                        // right: -1.5rem;
+                    // }
+                // }
             }
 
             .title {
@@ -53,6 +54,45 @@
                 }
             }
 
+        }
+
+        
+        #work {
+
+            .projects-nav {
+                flex-direction: column;
+
+                .pn-item {
+                    width: 340px;
+                    margin: 0 auto;
+                }
+            }
+
+            .modalContainer {
+                flex-direction: column;
+
+                img {
+                    width: 100%;
+                    margin-top: 42px;
+                }
+
+                .project-info {
+                    padding: 0 8px;
+
+                    button {
+                        right: 0;
+                        top: 0;
+                        border: none;
+                    }
+                }
+            }
+
+            .projects {
+        
+                .project {
+                    margin: 20px auto;
+                }
+            }
         }
 
         
