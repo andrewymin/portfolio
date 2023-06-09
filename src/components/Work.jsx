@@ -10,7 +10,7 @@ function Work(props) {
     const overlay = document.querySelector('#overlay');
 
     useEffect(() => {
-        pNav();
+        pNav(); // js file for work nav 
     }, []);
     // console.log(works.length)
 

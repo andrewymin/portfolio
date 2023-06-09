@@ -44,6 +44,8 @@ body {
   }
   body #work .modalContainer {
     flex-direction: column;
+    height: fit-content;
+    padding-bottom: 1.5rem;
   }
   body #work .modalContainer img {
     width: 100%;
