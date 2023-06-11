@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import Coffee from './Coffee.jsx';
+import Coffee from './Coffee.jsx';
 
 function Contact(props) {
 
@@ -11,7 +11,18 @@ function Contact(props) {
     const temp_id = import.meta.env.VITE_template_id;
     const public_key = import.meta.env.VITE_public_key;
     const form = useRef();
-    const notify = () => toast.success('🎉 Message successfully sent!', {
+    const notifySuccess = () => toast.success('🎉 Message successfully sent!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
+    const notifyError = () => toast.error('Message not Sent 😥', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -44,22 +55,24 @@ function Contact(props) {
     }
 
     function handleSubmit(e) {
-        setName('');
-        setEmail('');
-        setMsg('');
-        notify();
+        // setName('');
+        // setEmail('');
+        // setMsg('');
+        // notifySuccess();
+        // notifyError();
 
         // TODO: undo comment below after done testing
-        // emailjs.sendForm(service_id, temp_id, form.current, public_key)
-        //     .then((result) => {
-        //         setName('');
-        //         setEmail('');
-        //         setMsg('');
-        //         notify(); // toast notifier
-        //         // console.log(result.text);
-        //     }, (error) => {
-        //         console.log(error.text);
-        //     });
+        emailjs.sendForm(service_id, temp_id, form.current, public_key)
+            .then((result) => {
+                setName('');
+                setEmail('');
+                setMsg('');
+                notifySuccess(); // toast notifier
+                console.log(result.text);
+            }, (error) => {
+                notifyError();
+                console.log(error.text);
+            });
 
 
         // console.log(test_var) // this is the test for env variables, 
