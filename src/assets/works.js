@@ -11,7 +11,7 @@ export const works = [
     },
     {
         codeType: 'webDev',
-        site: 'https://sushiflask.onrender.com',
+        site: 'https://doji-sushi.vercel.app/',
         code: 'https://github.com/andrewymin/Doji_restaurant',
         image: "./images/Restaurant.png",
         alt: "Restaurant website",
@@ -21,7 +21,7 @@ export const works = [
     },
     {
         codeType: 'webDev',
-        site: 'https://blog-project.onrender.com',
+        site: 'https://complife-blog.vercel.app/',
         code: 'https://github.com/andrewymin/Blog_project',
         image: "./images/blog.png",
         alt: "Blog test",
@@ -31,7 +31,7 @@ export const works = [
     },
     {
         codeType: 'webDev',
-        site: 'https://weathernow.onrender.com',
+        site: 'https://weather-now-zip.vercel.app/',
         code: 'https://github.com/andrewymin/WeatherNow',
         image: "./images/WeatherNow.png",
         alt: "Weather App",
@@ -70,7 +70,7 @@ export const works = [
     },
     {
         codeType: 'webDev',
-        site: 'https://favmovies.onrender.com/',
+        site: 'https://top-fav-movies.vercel.app/',
         code: 'https://github.com/andrewymin/Top-Fav-Movies',
         image: "./images/Top_Fav_Movies.png",
         alt: "Top Favorite Movies",
