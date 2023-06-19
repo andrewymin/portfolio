@@ -219,30 +219,24 @@ section {
             margin-top: 3rem;
             width: 80%;
             // min-width: 200px;
-            min-width: 171px;
+            min-width: 141px;
         }
     }
 
     .social {
-        // display: flex;
-        // height: 100%;
-        // justify-content: start;
-        // align-items: flex-end;
-        min-width: 470px;
+        // min-width: 470px;
+        min-width: 50vw;
         max-width: 40vw;
         position: relative;
         padding-left: 3rem;
-        // overflow-y: hidden;
         padding-top: 1rem;
 
         .platforms {
             display: flex;
-            // flex-direction: column;
-            // gap: 1rem;
-            // align-items: start;
             flex-direction: row;
             gap: 3rem;
             justify-content: center;
+            // transition: 1s all;
 
             :nth-child(3) {
                 padding-left: 4px;
@@ -263,15 +257,18 @@ section {
             }
             
             a {
+                // display: inline-block;
+                // height: 0;
                 font-size: 3rem;
                 cursor: pointer;
                 color: $bark;
+                transition: all .5s;
     
             }
 
             a:hover {
                 color: $redWood;
-                transform: translateY(-5px);
+                // transform: translateY(-5px);
             }
 
 
@@ -386,7 +383,7 @@ section {
 
         img {
             // width: 400px;
-            width: clamp(320px, 100%, 400px);
+            width: clamp(255px, 100%, 400px);
             height: 210px;
             border-radius: 20px;
         }

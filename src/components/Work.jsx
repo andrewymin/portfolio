@@ -18,7 +18,6 @@ function Work(props) {
 
     return (
         <section id='work'>
-                <header>
                     <nav>
                         <ul className="projects-nav">
                             <li className="pn-item proj-active"><span>All Projects</span></li>
@@ -59,11 +58,6 @@ function Work(props) {
                         code={openModal.code}
                         demo={openModal.demo}
                     />}
-
-                </header>
-
-                
-
         </section>
     );
 }
