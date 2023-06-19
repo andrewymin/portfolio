@@ -19,7 +19,6 @@ body {
   }
   body #intro .social {
     padding-left: 1rem;
-    min-width: 210px;
     padding-top: 0;
   }
   body #intro .title {
@@ -38,6 +37,7 @@ body {
   }
   body #work .projects-nav {
     flex-direction: column;
+    gap: 0.5rem;
   }
   body #work .projects-nav .pn-item {
     max-width: 340px;
@@ -69,11 +69,17 @@ body {
   }
 }
 @media (max-width: 520px) {
+  body #intro .social {
+    min-width: 50vw;
+  }
   body #intro .social .platforms {
     gap: 0 3rem;
     align-items: start;
     padding-bottom: 1rem;
     flex-wrap: wrap;
+  }
+  body #intro #mainNav .menu {
+    max-width: 140px;
   }
   body #work .project img {
     height: auto;
@@ -86,14 +92,10 @@ body {
   body #intro p {
     font-size: 14px;
   }
-  body #intro .social {
-    min-width: 50vw;
-  }
   body #intro .social .platforms i {
     font-size: 2rem;
   }
   body #mainNav .menu {
-    max-width: 140px;
     scale: 0.6;
   }
 }
@@ -270,6 +272,7 @@ section {
   position: relative;
   padding-left: 3rem;
   padding-top: 1rem;
+  z-index: 1;
 }
 #intro .social .platforms {
   display: flex;
