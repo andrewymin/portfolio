@@ -9,6 +9,8 @@ function Work(props) {
     const [openModal, setOpenModal] = useState({open: false});
     const overlay = document.querySelector('#overlay');
 
+    
+
     useEffect(() => {
         pNav(); // js file for work nav 
     }, []);
