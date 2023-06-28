@@ -346,14 +346,29 @@ section {
 }
 #work .projects .project .proj_info {
   width: clamp(255px, 100%, 400px);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  height: 50%;
   align-items: center;
   text-align: center;
 }
+#work .projects .project .siteBtn {
+  text-decoration: none;
+  font-weight: 500;
+  color: rgb(235, 227, 240);
+  margin: 0 8px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #e1dfdd;
+  color: rgb(66, 54, 54);
+  transition: all 0.2s ease-in;
+}
+#work .projects .project .siteBtn:hover {
+  color: #e1dfdd;
+  background-color: rgb(219, 45, 72);
+}
 #work .projects img {
   width: clamp(225px, 50%, 70vw);
-  border-radius: 8px;
+  border-radius: 22px;
   object-fit: cover;
 }
 

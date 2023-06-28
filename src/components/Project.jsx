@@ -22,9 +22,7 @@ function Project(props) {
                             <>
                                 <img src={project.image} alt={project.alt}/>
                                 <div className='proj_info'>
-                                    <h6>PROJECT</h6>
                                     <h3>{project.title}</h3>
-                                    <h6>ABOUT</h6>
                                     <div className='project-about'>
                                         <p>
                                             {project.description}
@@ -36,30 +34,28 @@ function Project(props) {
                                     }}
                                     </ul>*/}
                                     <div className='project-btns'>
-                                        {project.deploy && <a href={project.demo} target="_blank" rel="noopener" className='siteBtn'>Site</a>}
-                                        <a href={project.code} target="_blank" rel="noopener" className='siteBtn'>Code</a>
+                                        {project.deploy && <a href={project.site} target="_blank" rel="noopener" className='siteBtn'>Live Demo <i className="fa fa-arrow-up-right-from-square fa-xl"></i></a>}
+                                        <a href={project.code} target="_blank" rel="noopener" className='siteBtn'>Code <i className="fa-brands fa-github fa-xl"></i></a>
                                     </div>
                                 </div>
                             </> 
                             : // clause change for layout of project if left = false
                             <>
                                 <div className='proj_info'>
-                                    <h6>PROJECT</h6>
                                     <h3>{project.title}</h3>
                                     {/* <ul> 
                                     {for (let i=0; i < project.lang.length; i++){
                                         <li> {project.lang[i]} </li>
                                     }}
                                         </ul>*/}
-                                    <h6>ABOUT</h6>
                                     <div className='project-about'>
                                         <p>
                                             {project.description}
                                         </p>
                                     </div>
                                     <div className='project-btns'>
-                                        {project.deploy && <a href={project.demo} target="_blank" rel="noopener" className='siteBtn'>Site</a>}
-                                        <a href={project.code} target="_blank" rel="noopener" className='siteBtn'>Code</a>
+                                        {project.deploy && <a href={project.site} target="_blank" rel="noopener" className='siteBtn'>Live Demo <i className="fa fa-arrow-up-right-from-square fa-xl"></i></a>}
+                                        <a href={project.code} target="_blank" rel="noopener" className='siteBtn'>Code <i className="fa-brands fa-github fa-xl"></i></a>
                                     </div>
                                 </div>
                                 <img src={project.image} alt={project.alt}/>

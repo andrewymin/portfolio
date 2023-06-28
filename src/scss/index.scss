@@ -365,16 +365,38 @@ section {
 
             .proj_info {
                 width: clamp(255px, 100%, 400px);
-                display: flex;
-                flex-direction: column;
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                // text-align: center;
+                display: grid;
+                height: 50%;    
                 align-items: center;
                 text-align: center;
             }
+
+            .siteBtn {
+                text-decoration: none;
+                font-weight: 500;
+                color: $cobble;
+                margin: 0 8px;
+                padding: 5px;
+                border-radius: 10px;
+                background-color: $white;
+                color: $bark;
+                transition: all .2s ease-in;
+            }
+    
+            .siteBtn:hover {
+                color: $white;
+                background-color: $redWood;
+            }
+    
         }
 
         img {
             width: clamp(225px, 50%, 70vw);
-            border-radius: 8px;
+            border-radius: 22px;
             object-fit: cover;
         }
 
