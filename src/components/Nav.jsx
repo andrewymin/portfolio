@@ -30,7 +30,7 @@ function Nav(props) {
             <nav className='menu'>
               <div className='link1'>
                 <div className="arrow"></div>
-                <HashLink smooth to='#work'><span>Work</span></HashLink>
+                <HashLink smooth to='#work'><span>Projects</span></HashLink>
               </div>
               <div className='link2'>
                 <HashLink smooth to='#contact'><span>Contact</span></HashLink>

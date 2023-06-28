@@ -11,21 +11,39 @@ function Project(props) {
 
     return (
         <section id="work">
-            <h1>Recent Projects</h1>
-                <nav>
-                    <ul className="projects-nav">
-                        <li className="pn-item proj-active"><i className="fa fa-light fa-laptop-code"></i></li>
-                        <li className="pn-item"><i className="fa-brands fa-python"></i></li>
-                    </ul>
-                </nav>
-            <div className="projects container-fluid">
-                {projects.map((project, index)=>
+            <div className="w_intro">
+                <h6>RECENT PROJECTS</h6>
+                <h4>Each Project is a <span>unique</span> piece of development</h4>
+            </div>
+            <div className="projects">
+                {projects.map((project, index)=> // maping through projects
                     <div className='project'>
-                        
                         {project.left ? 
-                            <div>
+                            <>
                                 <img src={project.image} alt={project.alt}/>
-                                <div>
+                                <div className='proj_info'>
+                                    <h6>PROJECT</h6>
+                                    <h3>{project.title}</h3>
+                                    <h6>ABOUT</h6>
+                                    <div className='project-about'>
+                                        <p>
+                                            {project.description}
+                                        </p>
+                                    </div>
+                                    {/* <ul> 
+                                    {for (let i=0; i < project.lang.length; i++){
+                                        <li> {project.lang[i]} </li>
+                                    }}
+                                    </ul>*/}
+                                    <div className='project-btns'>
+                                        {project.deploy && <a href={project.demo} target="_blank" rel="noopener" className='siteBtn'>Site</a>}
+                                        <a href={project.code} target="_blank" rel="noopener" className='siteBtn'>Code</a>
+                                    </div>
+                                </div>
+                            </> 
+                            : // clause change for layout of project if left = false
+                            <>
+                                <div className='proj_info'>
                                     <h6>PROJECT</h6>
                                     <h3>{project.title}</h3>
                                     {/* <ul> 
@@ -36,29 +54,7 @@ function Project(props) {
                                     <h6>ABOUT</h6>
                                     <div className='project-about'>
                                         <p>
-                                            {project.desc}
-                                        </p>
-                                    </div>
-                                    <div className='project-btns'>
-                                        {project.deploy && <a href={project.demo} target="_blank" rel="noopener" className='siteBtn'>Site</a>}
-                                        <a href={project.code} target="_blank" rel="noopener" className='siteBtn'>Code</a>
-                                    </div>
-                                </div>
-                            </div> 
-                            : 
-                            <div>
-                                <div>
-                                    <h6>PROJECT</h6>
-                                    <h3>{project.title}</h3>
-                                    {/* <ul> 
-                                    {for (let i=0; i < project.lang.length; i++){
-                                        <li> {project.lang[i]} </li>
-                                    }}
-                                        </ul>*/}
-                                    <h6>ABOUT</h6>
-                                    <div className='project-about'>
-                                        <p>
-                                            {project.desc}
+                                            {project.description}
                                         </p>
                                     </div>
                                     <div className='project-btns'>
@@ -67,9 +63,8 @@ function Project(props) {
                                     </div>
                                 </div>
                                 <img src={project.image} alt={project.alt}/>
-                        </div> 
+                        </> 
                         }
-
                     </div>
                 )}
             </div>

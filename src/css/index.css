@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -35,59 +36,30 @@ body {
   body #intro .menu .link2 {
     grid-column: 1;
   }
-  body #work .projects-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  body #work .projects-nav .pn-item {
-    max-width: 340px;
-    min-width: 255px;
-    margin: 0 auto;
-  }
-  body #work .modalContainer {
-    flex-direction: column;
-    height: fit-content;
-    padding-bottom: 1.5rem;
-  }
-  body #work .modalContainer img {
-    width: 100%;
-    margin-top: 42px;
-  }
-  body #work .modalContainer .project-info {
-    padding: 0 8px;
-  }
-  body #work .modalContainer .project-info button {
-    right: 0;
-    top: 0;
-    border: none;
-  }
-  body #work .projects {
-    margin-top: 0;
-  }
-  body #work .projects .project {
-    margin: 20px auto;
-  }
 }
 @media (max-width: 520px) {
   body #intro .social {
     min-width: 50vw;
   }
   body #intro .social .platforms {
-    gap: 0 3rem;
+    gap: 0;
     align-items: start;
     padding-bottom: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
   body #intro #mainNav .menu {
     max-width: 140px;
   }
-  body #work .project img {
-    height: auto;
+  body #work .w_intro {
+    margin-left: 1rem;
   }
 }
 @media (max-width: 320px) {
   body h1 {
     font-size: 2rem;
+  }
+  body h4 {
+    font-size: revert;
   }
   body #intro p {
     font-size: 14px;
@@ -97,6 +69,16 @@ body {
   }
   body #mainNav .menu {
     scale: 0.6;
+  }
+  body #work .w_intro h3 {
+    font-size: 1.5rem;
+  }
+  body #work .project {
+    height: 80vh;
+    height: 80svh;
+  }
+  body #work .project img {
+    height: auto;
   }
 }
 .show {
@@ -174,7 +156,7 @@ section {
   border-right: 3px solid rgb(66, 54, 54);
   transform: translate(-50%, -50%) rotate(45deg);
   top: 25px;
-  left: 35px;
+  left: 22px;
   transition: 1s;
   z-index: 1;
   pointer-events: none;
@@ -198,7 +180,7 @@ section {
   filter: brightness(0.9);
 }
 #mainNav .menu .link1:hover .arrow {
-  left: 70px;
+  left: 55px;
 }
 #mainNav .menu .link1:hover .arrow::before {
   width: 25px;
@@ -278,7 +260,7 @@ section {
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  justify-content: center;
+  justify-content: start;
 }
 #intro .social .platforms :nth-child(3) {
   padding-left: 4px;
@@ -287,13 +269,13 @@ section {
   position: relative;
 }
 #intro .social .platforms :nth-child(3) a::after {
-  content: "Resume";
+  content: "CV";
   font-size: 1rem;
   font-weight: 700;
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 60%);
 }
 #intro .social .platforms a {
   font-size: 3rem;
@@ -334,197 +316,45 @@ section {
 }
 
 #work {
-  background-color: rgb(66, 54, 54);
-  color: rgb(235, 227, 240);
   height: 100%;
 }
-#work .projects-nav {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding-top: 20px;
-  padding-left: 0;
+#work .w_intro {
+  margin-top: 6rem;
+  margin-left: 3rem;
 }
-#work .pn-item {
-  text-align: center;
-  list-style: none;
-  margin: 0 10px;
-  padding: 5px;
-  transition: transform 0.5s ease-out;
+#work .w_intro h6 {
+  color: rgb(219, 45, 72);
 }
-#work .pn-item:hover {
-  cursor: pointer;
-  transform: translateY(-10%);
-}
-#work .proj-active {
-  /* font-weight: bold; */
-  transition: background-color 0.25s ease-in-out, transform 0.5s ease-out;
-  background-color: rgb(219, 45, 72);
-  border-radius: 10px;
+#work .w_intro span {
+  font-family: "Lobster Two", cursive;
 }
 #work .projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   margin-top: 3rem;
+  padding: 0;
 }
 #work .projects .project {
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s;
-  max-width: 400px;
-  margin: 20px auto;
-}
-#work .projects .project:hover {
-  transform: scale(1.05);
-}
-#work .projects img {
-  width: clamp(255px, 100%, 400px);
-  height: 210px;
-  border-radius: 20px;
-}
-
-#work::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 21px;
-  background: linear-gradient(to top, rgb(66, 54, 54), transparent);
-  z-index: 1;
-}
-
-#about::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 21px;
-  background: linear-gradient(to bottom, rgb(66, 54, 54), transparent);
-  z-index: 1;
-}
-
-.disappear {
-  display: none;
-}
-
-.appear {
-  display: block;
-}
-
-#overlay {
-  position: fixed;
-  opacity: 0;
-  transition: 200ms ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
-
-#overlay.active {
-  pointer-events: all;
-  opacity: 1;
-  z-index: 10;
-}
-
-.modalContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 200ms ease-in-out;
-  border-radius: 10px;
-  z-index: 10;
-  min-width: 330px;
-  max-width: 600px;
-  height: 420px;
-  text-align: left;
-  color: rgb(235, 227, 240);
-  background-color: rgb(66, 54, 54);
+  box-shadow: 0 0 16px 4px rgb(66, 54, 54);
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 22px;
+  height: 50vh;
+  height: 65svh;
+  width: clamp(255px, 80%, 1400px);
+  margin: 3rem auto;
 }
-.modalContainer img {
-  object-fit: cover;
-  width: 50%;
-  padding: 17px;
-  border-radius: 34px;
-}
-.modalContainer .project-info {
+#work .projects .project .proj_info {
+  width: clamp(255px, 100%, 400px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-.modalContainer .project-info .project-about {
-  height: 90px;
-  overflow: auto;
-}
-.modalContainer .project-info .project-about::-webkit-scrollbar {
-  width: 1rem;
-}
-.modalContainer .project-info .project-about::-webkit-scrollbar-track {
-  background-color: rgb(235, 227, 240);
-  border-radius: 100vw;
-  margin-block: 0.5em;
-}
-.modalContainer .project-info .project-about::-webkit-scrollbar-thumb {
-  background: rgb(219, 45, 72);
-  border-radius: 100vw;
-}
-.modalContainer .project-info .project-about::-webkit-scrollbar-thumb:hover {
-  background: rgb(78, 152, 55);
-}
-.modalContainer .project-info button {
-  background: none;
-  color: rgb(235, 227, 240);
-  border: 1px solid rgb(235, 227, 240);
-  border-radius: 6px;
-  right: 15px;
-  top: 15px;
-  position: absolute;
-  width: 26px;
-  height: 28px;
-  font-weight: bold;
-}
-.modalContainer .project-info button:hover {
-  background-color: rgb(219, 45, 72);
-}
-.modalContainer .project-info .siteBtn {
-  text-decoration: none;
-  font-weight: 500;
-  color: rgb(235, 227, 240);
-  margin: 0 8px;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: #e1dfdd;
-  color: rgb(66, 54, 54);
-  transition: all 0.2s ease-in;
-}
-.modalContainer .project-info .siteBtn:hover {
-  color: #e1dfdd;
-  background-color: rgb(219, 45, 72);
-}
-.modalContainer .project-info .project-btns {
+  align-items: center;
   text-align: center;
 }
-
-#contact::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 21px;
-  background: linear-gradient(to bottom, rgb(66, 54, 54), transparent);
-  z-index: 3;
+#work .projects img {
+  width: clamp(225px, 50%, 70vw);
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 #contact {
@@ -680,23 +510,4 @@ section {
   display: flex;
   z-index: 1;
   padding: 0 20px;
-}
-
-@keyframes vapour {
-  0% {
-    transform: translateY(0) scaleX(1);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-150px) scaleX(5);
-  }
-  95% {
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-300px) scaleX(10);
-  }
 }/*# sourceMappingURL=index.css.map */
