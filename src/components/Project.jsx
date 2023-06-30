@@ -1,16 +1,34 @@
-import {React, useEffect} from 'react';
+import {React, useLayoutEffect, useRef} from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { projects } from '../assets/projects.js';
 // import pNav from '../assets/projectNav.js';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function Project(props) {
 
-    // useEffect(() => {
-    //     pNav(); // js file for work nav 
-    // }, []);
+    const app = useRef();
+
+    useLayoutEffect(() => {
+      let ctx = gsap.context(() => {
+        // use scoped selectors
+        gsap.fromTo(
+          '.w_intro',
+          {opacity: 0}, // from 
+          {duration: 1, opacity: 1, scrollTrigger: { // to
+            trigger: ".w_intro",
+            start: "top 80%",
+            // markers: true,
+          }},
+        );
+      }, app);
+      
+      return () => ctx.revert();
+    }, []);
 
     return (
-        <section id="work">
+        <section ref={app} id="work">
             <div className="w_intro">
                 <h6>RECENT PROJECTS</h6>
                 <h4>Each Project is a <span>unique</span> piece of development</h4>
@@ -22,7 +40,7 @@ function Project(props) {
                             <>
                                 <img src={project.image} alt={project.alt}/>
                                 <div className='proj_info'>
-                                    <h3>{project.title}</h3>
+                                    <h3>{project.title.toLocaleUpperCase()}</h3>
                                     <div className='project-about'>
                                         <p>
                                             {project.description}
@@ -42,7 +60,7 @@ function Project(props) {
                             : // clause change for layout of project if left = false
                             <>
                                 <div className='proj_info'>
-                                    <h3>{project.title}</h3>
+                                    <h3>{project.title.toLocaleUpperCase()}</h3>
                                     {/* <ul> 
                                     {for (let i=0; i < project.lang.length; i++){
                                         <li> {project.lang[i]} </li>

@@ -73,11 +73,11 @@ body {
   body #work .w_intro h3 {
     font-size: 1.5rem;
   }
-  body #work .project {
+  body #work .projects .project {
     height: 80vh;
     height: 80svh;
   }
-  body #work .project img {
+  body #work .projects .project img {
     height: auto;
   }
 }
@@ -351,6 +351,10 @@ section {
   align-items: center;
   text-align: center;
 }
+#work .projects .project .proj_info .project-about {
+  width: 74%;
+  margin: 0 auto;
+}
 #work .projects .project .siteBtn {
   text-decoration: none;
   font-weight: 500;
@@ -365,6 +369,7 @@ section {
 #work .projects .project .siteBtn:hover {
   color: #e1dfdd;
   background-color: rgb(219, 45, 72);
+  cursor: pointer;
 }
 #work .projects img {
   width: clamp(225px, 50%, 70vw);

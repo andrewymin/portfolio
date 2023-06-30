@@ -373,6 +373,11 @@ section {
                 height: 50%;    
                 align-items: center;
                 text-align: center;
+
+                .project-about {
+                    width: 74%;
+                    margin: 0 auto;
+                }
             }
 
             .siteBtn {
@@ -390,6 +395,7 @@ section {
             .siteBtn:hover {
                 color: $white;
                 background-color: $redWood;
+                cursor: pointer;
             }
     
         }

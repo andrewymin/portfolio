@@ -131,15 +131,17 @@
                     font-size: 1.5rem;
                 }
             }
+            .projects {
+                .project {
+                    height: 80vh;
+                    height: 80svh;
 
-            .project {
-                height: 80vh;
-                height: 80svh;
-
-                img {
-                    height: auto;
-                }
-            }            
+                    img {
+                        height: auto;
+                    }
+                }  
+            }
+          
         }
     }
 
