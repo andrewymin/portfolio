@@ -344,6 +344,14 @@ section {
   width: clamp(255px, 80%, 1400px);
   margin: 3rem auto;
 }
+#work .projects .project .lang {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  font-weight: 500;
+}
 #work .projects .project .proj_info {
   width: clamp(255px, 100%, 400px);
   display: grid;
@@ -357,14 +365,13 @@ section {
 }
 #work .projects .project .siteBtn {
   text-decoration: none;
-  font-weight: 500;
-  color: rgb(235, 227, 240);
   margin: 0 8px;
   padding: 5px;
   border-radius: 10px;
   background-color: #e1dfdd;
   color: rgb(66, 54, 54);
   transition: all 0.2s ease-in;
+  font-weight: 700;
 }
 #work .projects .project .siteBtn:hover {
   color: #e1dfdd;

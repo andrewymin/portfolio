@@ -363,6 +363,15 @@ section {
             width: clamp(255px, 80%, 1400px);
             margin: 3rem auto;
 
+            .lang {
+                list-style: none;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                padding: 0;
+                font-weight: 500;
+            }
+
             .proj_info {
                 width: clamp(255px, 100%, 400px);
                 // display: flex;
@@ -382,14 +391,13 @@ section {
 
             .siteBtn {
                 text-decoration: none;
-                font-weight: 500;
-                color: $cobble;
                 margin: 0 8px;
                 padding: 5px;
                 border-radius: 10px;
                 background-color: $white;
                 color: $bark;
                 transition: all .2s ease-in;
+                font-weight: 700;
             }
     
             .siteBtn:hover {
