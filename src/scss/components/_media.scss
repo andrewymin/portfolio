@@ -40,11 +40,21 @@
             }
 
         }
-
         
+        #contact {
+            flex-direction: column;
+            justify-content: space-evenly;
 
+            .about_me {
+                width: fit-content;
 
-        
+                .rotate_pic {
+                    bottom: -35px;
+                    right: -35px;
+                    scale: 0.8;
+                }
+            }
+        }
     }
 
 }
@@ -81,7 +91,20 @@
             .w_intro {
                 margin-left: 1rem;
             }
-         
+        }
+
+        #contact {
+            margin-top: 4rem;
+            gap: 3rem;
+
+            .about_me {
+
+                .rotate_pic {
+                    bottom: -40px;
+                    right: -40px;
+                    scale: 0.7;
+                }
+            }
         }
     }
 
@@ -142,6 +165,14 @@
                 }  
             }
           
+        }
+
+        #emailForm{
+            form {
+                button {
+                    width: 50%;
+                }
+            }
         }
     }
 
