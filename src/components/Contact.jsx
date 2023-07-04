@@ -91,7 +91,7 @@ function Contact(props) {
             {scale: 0, transformOrigin: "left top"}, // from
             {
                 duration: 3, 
-                delay: 1 + `.${delay}`,
+                delay: `.${delay}`,
                 scale: 1,
                 ease: `elastic.out(1, 0.3)`,
                 scrollTrigger: { // to
