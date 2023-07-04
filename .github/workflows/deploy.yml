@@ -24,6 +24,10 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_email_id: ${{ secrets.VITE_email_id}}
+          VITE_template_id: ${{ secrets.VITE_template_id }}
+          VITE_public_key: ${{ secrets.VITE_public_key }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2

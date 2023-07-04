@@ -12,7 +12,7 @@ function Contact(props) {
     // const tl = useRef(); // timeline
 
     // const test_var = import.meta.env.VITE_test;
-    const service_id = import.meta.env.VITE_service_id;
+    const email_id = import.meta.env.VITE_email_id;
     const temp_id = import.meta.env.VITE_template_id;
     const public_key = import.meta.env.VITE_public_key;
     const form = useRef();
@@ -67,7 +67,7 @@ function Contact(props) {
         // notifyError();
 
         // TODO: undo comment below after done testing
-        emailjs.sendForm(service_id, temp_id, form.current, public_key)
+        emailjs.sendForm(email_id, temp_id, form.current, public_key)
             .then((result) => {
                 setName('');
                 setEmail('');
@@ -110,6 +110,7 @@ function Contact(props) {
         text.innerHTML = text.innerText.split("").map((char, i)=>
             `<span style="transform:rotate(${i * 8}deg)">${char}</span>`
         ).join("");
+
         let ctx = gsap.context(() => {
             gsap.fromTo( // contact img
                 '.about_me img',
