@@ -73,6 +73,7 @@ function Contact(props) {
                 setEmail('');
                 setMsg('');
                 notifySuccess(); // toast notifier
+                e.preventDefault();
                 console.log(result.text);
             }, (error) => {
                 notifyError();
