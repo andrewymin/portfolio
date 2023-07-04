@@ -85,9 +85,33 @@ function Contact(props) {
         e.preventDefault();
     }
 
-    useLayoutEffect(() => {
+    const growRight = (target, delay) => {
+        return gsap.fromTo(
+            target,
+            {scale: 0, transformOrigin: "left top"}, // from
+            {
+                duration: 3, 
+                delay: 1 + `.${delay}`,
+                scale: 1,
+                ease: `elastic.out(1, 0.3)`,
+                scrollTrigger: { // to
+                    trigger: '#emailForm',
+                    start: "top 60%",
+                    // markers: true,
+                }
+            },
+        );
+    }
+
+    useLayoutEffect(()=>{
+        const text = document.querySelector('.text p');
+        let inputs = document.querySelector('form').childNodes;
+
+        text.innerHTML = text.innerText.split("").map((char, i)=>
+            `<span style="transform:rotate(${i * 8}deg)">${char}</span>`
+        ).join("");
         let ctx = gsap.context(() => {
-            gsap.fromTo(
+            gsap.fromTo( // contact img
                 '.about_me img',
                 {x: -1000}, // from 
                 {
@@ -101,7 +125,7 @@ function Contact(props) {
                     }
                 },
             );
-            gsap.fromTo(
+            gsap.fromTo( // contact circle
                 '.circle',
                 {scale: 0}, // from 
                 {
@@ -116,15 +140,27 @@ function Contact(props) {
                     }
                 },
             );
+            gsap.fromTo( // contact email h4
+                '#emailForm h4',
+                {x: 1000}, // from
+                {
+                    duration: 1.4, 
+                    x: 0,
+                    ease: "power3.out",
+                    scrollTrigger: { // to
+                        trigger: '#emailForm h4',
+                        start: "top 60%",
+                        // markers: true,
+                    }
+                },
+            );
+            // inputs.map((field, index)=>{
+            //     console.log(`field: ${field}, key: ${index}`)
+            // });
+            inputs.forEach((field, index)=> growRight(field, index))
         }, app);
-        return () => ctx.revert();
-    }, []);
 
-    useLayoutEffect(()=>{
-        const text = document.querySelector('.text p');
-        text.innerHTML = text.innerText.split("").map((char, i)=>
-            `<span style="transform:rotate(${i * 8}deg)">${char}</span>`
-        ).join("");
+        return () => ctx.revert();
     }, [])
 
     return (
@@ -143,6 +179,7 @@ function Contact(props) {
             <div id='emailForm'>
                 <h4>Write me a Message 👇</h4>
                 <form ref={form} onSubmit={handleSubmit}>
+
                     <label htmlFor="name">Your Name</label>
                     <input 
                         value={name} 
@@ -155,12 +192,16 @@ function Contact(props) {
                         onInvalid={e => e.target.setCustomValidity('Please enter field correctly')}
                         onInput={e => e.target.setCustomValidity('')}
                         onBlur={checkName}
-                        />
+                    />
+                    
                     <label htmlFor="email">Your Email</label>
                     <input onChange={handleChange} name='email' type="email" placeholder='Email' required value={email}/> 
-                    <label htmlFor="msg">Message</label>
+                   
+                   <label htmlFor="msg">Message</label>
                     {/* <input name='msg' type="text" placeholder='Message'/> */}
+                    
                     <textarea onChange={handleChange} name="msg" id="msg" cols="30" rows="5" placeholder='Enter text here...' required value={msg}></textarea>
+                    
                     <button type='submit'>SEND</button>
                 </form>
                 <ToastContainer

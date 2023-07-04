@@ -7,7 +7,7 @@
 
 body {
   background-color: #e1dfdd;
-  color: #000000;
+  color: rgb(66, 54, 54);
   overflow-x: hidden;
 }
 
@@ -319,7 +319,7 @@ section {
   transition: all 0.5s ease-out;
   font-size: 2rem;
   position: fixed;
-  bottom: 10px;
+  bottom: 5px;
   right: 15px;
   color: rgb(219, 45, 72);
   cursor: pointer;
@@ -347,7 +347,7 @@ section {
   padding: 0;
 }
 #work .projects .project {
-  box-shadow: 0 0 16px 4px rgb(66, 54, 54);
+  box-shadow: 0 0 16px 4px rgb(78, 152, 55);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -501,6 +501,33 @@ section {
 }
 #contact #emailForm form button:hover {
   background-color: rgb(78, 152, 55);
+}
+
+footer {
+  display: grid;
+  place-items: center;
+}
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+footer::before {
+  content: "";
+  width: 100%;
+  background-color: rgb(78, 152, 55);
+  grid-column: 1/2;
+  height: 35px;
+  border-top-right-radius: 45px;
+}
+
+footer::after {
+  content: "";
+  width: 100%;
+  background-color: rgb(78, 152, 55);
+  grid-column: 3/4;
+  height: 35px;
+  border-top-left-radius: 45px;
 }
 
 @keyframes rotateText {
