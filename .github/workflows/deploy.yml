@@ -28,6 +28,7 @@ jobs:
           VITE_email_id: ${{ secrets.VITE_email_id}}
           VITE_template_id: ${{ secrets.VITE_template_id }}
           VITE_public_key: ${{ secrets.VITE_public_key }}
+          secret_key: ${{ secrets.Test }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
