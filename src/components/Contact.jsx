@@ -15,7 +15,7 @@ function Contact(props) {
     const email_id = import.meta.env.VITE_email_id || process.env.VITE_email_id;
     const temp_id = import.meta.env.VITE_template_id || process.env.VITE_template_id;
     const public_key = import.meta.env.VITE_public_key || process.env.VITE_public_key;
-    const env_test = import.meta.env.VITE_secret_key || process.env.secret_key;
+    const env_test = import.meta.env.VITE_SECRET_KEY || process.env.VITE_SECRET_KEY;
 
 
     const form = useRef();
