@@ -1,5 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import gsap from 'gsap';
@@ -19,7 +19,7 @@ function Contact(props) {
 
 
     const form = useRef();
-    const notifySuccess = () => toast.success('🎉 Message successfully sent!', {
+    const notifySuccess = () => toast('🎉 Ssuccessfully redirected to email client', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -27,7 +27,7 @@ function Contact(props) {
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         });
 
     const notifyError = () => toast.error('Message not Sent 😥', {
@@ -42,7 +42,7 @@ function Contact(props) {
         });
 
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [msg, setMsg] = useState('');
 
     function checkName(e) {
@@ -54,21 +54,29 @@ function Contact(props) {
     }
 
     function handleChange(e){
-        e.target.name == "name" ? setName(e.target.value) 
-            : e.target.name == "email" ? setEmail(e.target.value)
-            : setMsg(e.target.value);
+        // e.target.name == "name" ? setName(e.target.value) 
+        //     : e.target.name == "email" ? setEmail(e.target.value)
+        //     : setMsg(e.target.value);
+        e.target.name == "name" ? setName(e.target.value)
+        : setMsg(e.target.value);
         // e.target.name === 'name' ? setName(e.target.value) : null;
         // console.log(name)
-
     }
 
     function handleSubmit(e) {
-        setName('');
-        setEmail('');
-        setMsg('');
+            
+        // setName('');
+        // setEmail('');
+        // setMsg('');
+
         notifySuccess();
+        window.location.href = `mailto:anmi4420@colorado.edu?subject=Mail from ${name}&body=${msg}`;
+        e.preventDefault();
+        setName('');
+        setMsg('');
+
         // notifyError();
-        console.log(env_test)
+        // console.log(form.current)
 
         // TODO: undo comment below after done testing
         // emailjs.sendForm(email_id, temp_id, form.current, public_key)
@@ -84,10 +92,12 @@ function Contact(props) {
         //         console.log(error.text);
         //     });
 
+        
+        e.preventDefault();
+
 
         // console.log(test_var) // this is the test for env variables, 
         // TODO: get the secret keys from env file for emailjs api 
-        e.preventDefault();
     }
 
     const growRight = (target, delay) => {
@@ -200,15 +210,15 @@ function Contact(props) {
                         onBlur={checkName}
                     />
                     
-                    <label htmlFor="email">Your Email</label>
-                    <input onChange={handleChange} name='email' type="email" placeholder='Email' required value={email}/> 
+                    {/* <label htmlFor="email">Your Email</label>
+                    <input onChange={handleChange} name='email' type="email" placeholder='Email' required value={email}/>  */}
                    
                    <label htmlFor="msg">Message</label>
                     {/* <input name='msg' type="text" placeholder='Message'/> */}
                     
                     <textarea onChange={handleChange} name="msg" id="msg" cols="30" rows="5" placeholder='Enter text here...' required value={msg}></textarea>
                     
-                    <button type='submit'>SEND</button>
+                    <button type='submit'>EMAIL</button>
                 </form>
                 <ToastContainer
                     pauseOnHover={false}

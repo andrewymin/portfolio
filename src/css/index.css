@@ -105,6 +105,15 @@ body {
     width: 50%;
   }
 }
+.Toastify__progress-bar-theme--dark {
+  background: rgb(78, 152, 55);
+}
+
+.Toastify__toast-theme--dark {
+  background: rgb(66, 54, 54);
+  color: #e1dfdd;
+}
+
 h1 {
   font-size: 5rem;
 }

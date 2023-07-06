@@ -3,6 +3,15 @@
 @use "./abstracts/forward" as *;
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 
+.Toastify__progress-bar-theme--dark {
+    background: $mossGreen;
+}
+
+.Toastify__toast-theme--dark {
+    background: $bark;
+    color: $white;
+}
+
 $coffee-img: 'https://images.unsplash.com/photo-1626790477331-add9bde2fdce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80';
 
 h1 {
