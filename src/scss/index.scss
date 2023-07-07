@@ -490,6 +490,10 @@ section {
             label {
                 margin-top: 1rem;
                 font-weight: 500;
+                
+                span {
+                    font-size: .8rem;
+                }
             }
 
             input {
@@ -504,6 +508,10 @@ section {
                 padding: 5px;
                 border: 2px solid;
                 overflow: auto;
+            }
+
+            textarea {
+                cursor: auto;
             }
 
             #msg::-webkit-scrollbar { // this is the entire scrollbar; needs a width!

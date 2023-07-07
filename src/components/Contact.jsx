@@ -12,14 +12,14 @@ function Contact(props) {
     // const tl = useRef(); // timeline
 
     // const test_var = import.meta.env.VITE_test;
-    const email_id = import.meta.env.VITE_email_id || process.env.VITE_email_id;
-    const temp_id = import.meta.env.VITE_template_id || process.env.VITE_template_id;
-    const public_key = import.meta.env.VITE_public_key || process.env.VITE_public_key;
-    const env_test = import.meta.env.VITE_SECRET_KEY || process.env.VITE_SECRET_KEY;
+    // const email_id = import.meta.env.VITE_email_id || process.env.VITE_email_id;
+    // const temp_id = import.meta.env.VITE_template_id || process.env.VITE_template_id;
+    // const public_key = import.meta.env.VITE_public_key || process.env.VITE_public_key;
+    // const env_test = import.meta.env.VITE_SECRET_KEY || process.env.VITE_SECRET_KEY;
 
 
     const form = useRef();
-    const notifySuccess = () => toast('🎉 Ssuccessfully redirected to email client', {
+    const notifySuccess = () => toast("🎉 Can't wait to hear from you!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -63,17 +63,25 @@ function Contact(props) {
         // console.log(name)
     }
 
+    async function emailer(e) {
+        window.location.href = `mailto:anmi4420@colorado.edu?subject="Mail from ${name}"&body=${msg}`;
+        e.preventDefault;
+        return "Success";
+      } 
+
     function handleSubmit(e) {
             
         // setName('');
         // setEmail('');
         // setMsg('');
+        console.log(msg)
 
-        notifySuccess();
-        window.location.href = `mailto:anmi4420@colorado.edu?subject=Mail from ${name}&body=${msg}`;
-        e.preventDefault();
-        setName('');
-        setMsg('');
+        // emailer(e)
+        //     .then((result)=>{
+        //         notifySuccess();
+        //         setName('');
+        //         setMsg('');
+        //     })
 
         // notifyError();
         // console.log(form.current)
@@ -91,11 +99,7 @@ function Contact(props) {
         //         notifyError();
         //         console.log(error.text);
         //     });
-
-        
         e.preventDefault();
-
-
         // console.log(test_var) // this is the test for env variables, 
         // TODO: get the secret keys from env file for emailjs api 
     }
@@ -213,10 +217,20 @@ function Contact(props) {
                     {/* <label htmlFor="email">Your Email</label>
                     <input onChange={handleChange} name='email' type="email" placeholder='Email' required value={email}/>  */}
                    
-                   <label htmlFor="msg">Message</label>
+                   <label htmlFor="msg">Message <span>(Limit: 450 characters)</span></label>
                     {/* <input name='msg' type="text" placeholder='Message'/> */}
                     
-                    <textarea onChange={handleChange} name="msg" id="msg" cols="30" rows="5" placeholder='Enter text here...' required value={msg}></textarea>
+                    <textarea 
+                        onChange={handleChange} 
+                        name="msg" 
+                        id="msg" 
+                        cols="30" 
+                        rows="5" 
+                        placeholder='Enter text here...' 
+                        required value={msg}
+                        maxLength="450"    
+                    >    
+                    </textarea>
                     
                     <button type='submit'>EMAIL</button>
                 </form>
