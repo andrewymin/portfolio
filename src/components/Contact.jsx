@@ -109,9 +109,10 @@ function Contact(props) {
     useLayoutEffect(()=>{
         const text = document.querySelector('.text p');
         let inputs = document.querySelector('form').childNodes;
+        // console.log(text.innerHTML = text.innerText.split("").join(''))
 
         text.innerHTML = text.innerText.split("").map((char, i)=>
-            `<span style="transform:rotate(${i * 8}deg)">${char}</span>`
+            `<span style="transform:rotate(${i * 10}deg)">${char}</span>`
         ).join("");
 
         let ctx = gsap.context(() => {
