@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Pdf from '../resource/Current_Resume.pdf';
+
 
 function Social(props) {
 
@@ -29,13 +31,13 @@ function Social(props) {
         <div className='social' ref={app}>
             <div className='platforms'>
                 <div>
-                    <a href="https://www.google.com"><i className="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/andrewminproglife"><i className="fa-brands fa-linkedin"></i></a>
                 </div>
                 <div>
-                    <a href="https://www.youtube.com"><i className="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/andrewymin"><i className="fa-brands fa-github"></i></a>
                 </div>
                 <div>
-                    <a href="https://www.w3schools.com"><i className="fa-solid fa-file"></i></a>
+                    <a href={Pdf} target='_blank'><i className="fa-solid fa-file"></i></a>
                 </div>
             </div>
         </div>
