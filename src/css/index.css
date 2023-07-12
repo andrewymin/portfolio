@@ -403,7 +403,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #contact .about_me {
   width: 50%;

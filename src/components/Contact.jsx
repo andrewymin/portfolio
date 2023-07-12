@@ -15,7 +15,6 @@ function Contact(props) {
 
     const env_test = import.meta.env.VITE_SECRET_KEY || process.env.VITE_SECRET_KEY;
 
-
     const form = useRef();
     const notifySuccess = () => toast.success('🎉 Message successfully sent!', {
         position: "top-right",
@@ -61,30 +60,31 @@ function Contact(props) {
     }
 
     function handleSubmit(e) {
-        setName('');
-        setEmail('');
-        setMsg('');
-        notifySuccess();
-        // notifyError();
-        console.log(env_test)
+        let userInfo = {
+            userName: name,
+            userEmail: email,
+            userMsg: msg,
+        }
 
-        // TODO: undo comment below after done testing
-        // emailjs.sendForm(email_id, temp_id, form.current, public_key)
-        //     .then((result) => {
-        //         setName('');
-        //         setEmail('');
-        //         setMsg('');
-        //         notifySuccess(); // toast notifier
-        //         e.preventDefault();
-        //         console.log(result.text);
-        //     }, (error) => {
-        //         notifyError();
-        //         console.log(error.text);
-        //     });
+        fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userInfo)
+            }).then(res => { // this is just checking if the promise is fulfilled
+                if(!res.ok) {
+                    notifyError();
+                    console.log(res.error);
+                    return
+                }
+                notifySuccess();
+                setName('');
+                setEmail('');
+                setMsg('');
+            })
 
-
-        // console.log(test_var) // this is the test for env variables, 
-        // TODO: get the secret keys from env file for emailjs api 
         e.preventDefault();
     }
 
@@ -109,11 +109,10 @@ function Contact(props) {
     useLayoutEffect(()=>{
         const text = document.querySelector('.text p');
         let inputs = document.querySelector('form').childNodes;
-        // console.log(text.innerHTML = text.innerText.split("").join(''))
 
         text.innerHTML = text.innerText.split("").map((char, i)=>
-            `<span style="transform:rotate(${i * 10}deg)">${char}</span>`
-        ).join("");
+            `<span style="transform:rotate(${i * 8}deg)">${char}</span>`
+            ).join("");
 
         let ctx = gsap.context(() => {
             gsap.fromTo( // contact img
@@ -176,7 +175,7 @@ function Contact(props) {
                     <div className="circle">
                         <div className="logo">👨‍💻</div>
                         <div className="text">
-                            <p>Full-Stack Web Developer </p>
+                            <p>Full-Stack Web Developer</p>
                         </div>
                     </div> 
                 </div>
