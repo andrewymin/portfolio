@@ -65,26 +65,26 @@ function Contact(props) {
             userEmail: email,
             userMsg: msg,
         }
-        console.log(userInfo)
+        // console.log(userInfo)
 
-        // fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Accept': 'application/json',
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify(userInfo)
-        //     }).then(res => { // this is just checking if the promise is fulfilled
-        //         if(!res.ok) {
-        //             notifyError();
-        //             console.log(res.error);
-        //             return
-        //         }
-        //         notifySuccess();
-        //         setName('');
-        //         setEmail('');
-        //         setMsg('');
-        //     })
+        fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userInfo)
+            }).then(res => { // this is just checking if the promise is fulfilled
+                if(!res.ok) {
+                    notifyError();
+                    console.log(res.error);
+                    return
+                }
+                notifySuccess();
+                setName('');
+                setEmail('');
+                setMsg('');
+            })
 
         e.preventDefault();
     }
