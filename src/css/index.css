@@ -105,6 +105,29 @@ body {
     width: 50%;
   }
 }
+.Toastify__toast--default {
+  background: rgb(66, 54, 54);
+  color: #e1dfdd;
+}
+
+.Toastify__progress-bar--default {
+  background: skyblue;
+}
+
+.Toastify__toast--success {
+  background: rgb(66, 54, 54);
+  color: #e1dfdd;
+}
+
+.Toastify__progress-bar--success {
+  background: rgb(78, 152, 55);
+}
+
+.Toastify__toast--error {
+  background: rgb(66, 54, 54);
+  color: #e1dfdd;
+}
+
 h1 {
   font-size: 5rem;
 }

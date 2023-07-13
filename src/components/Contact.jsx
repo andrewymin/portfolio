@@ -1,16 +1,13 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function Contact(props) {
 
     const contact_img = 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80';
     const app = useRef();
     // const tl = useRef(); // timeline
-
     // const test_var = import.meta.env.VITE_test;
 
     const env_test = import.meta.env.VITE_SECRET_KEY || process.env.VITE_SECRET_KEY;
@@ -24,7 +21,7 @@ function Contact(props) {
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         });
 
     const notifyError = () => toast.error('Message not Sent 😥', {
@@ -35,7 +32,7 @@ function Contact(props) {
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
         });
 
     const notifyProgress = () => toast('⏳ Sending in Progress...', {
@@ -76,10 +73,13 @@ function Contact(props) {
             userEmail: email,
             userMsg: msg,
         }
-        notifyProgress()
+    
+        // notifyProgress();
+        // notifySuccess();
+        // notifyError();
         // console.log(userInfo)
-        document.querySelector("#contact button").disabled=true;
 
+        document.querySelector("#contact button").disabled=true;
         fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
                 method: 'POST',
                 headers: {

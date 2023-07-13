@@ -3,7 +3,32 @@
 @use "./abstracts/forward" as *;
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 
-$coffee-img: 'https://images.unsplash.com/photo-1626790477331-add9bde2fdce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80';
+.Toastify__toast--default {
+    background: $bark;
+    color: $white;
+}
+
+.Toastify__progress-bar--default {
+    background: skyblue;
+}
+
+.Toastify__toast--success {
+    background: $bark;
+    color: $white;
+}
+
+.Toastify__progress-bar--success {
+    background: $mossGreen;
+}
+
+.Toastify__toast--error {
+    background: $bark;
+    color: $white;
+}
+
+// .Toastify__progress-bar--error {
+//     background: $mossGreen;
+// }
 
 h1 {
     font-size: 5rem;
