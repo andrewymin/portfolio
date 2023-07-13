@@ -18,7 +18,7 @@ function Contact(props) {
     const form = useRef();
     const notifySuccess = () => toast.success('🎉 Message successfully sent!', {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -29,13 +29,24 @@ function Contact(props) {
 
     const notifyError = () => toast.error('Message not Sent 😥', {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
+        });
+
+    const notifyProgress = () => toast('⏳ Sending in Progress...', {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
         });
 
     const [name, setName] = useState('');
@@ -65,7 +76,9 @@ function Contact(props) {
             userEmail: email,
             userMsg: msg,
         }
+        notifyProgress()
         // console.log(userInfo)
+        document.querySelector("#contact button").disabled=true;
 
         fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
                 method: 'POST',
@@ -78,12 +91,14 @@ function Contact(props) {
                 if(!res.ok) {
                     notifyError();
                     console.log(res.error);
+                    document.querySelector("#contact button").disabled=false;
                     return
                 }
                 notifySuccess();
                 setName('');
                 setEmail('');
                 setMsg('');
+                document.querySelector("#contact button").disabled=false;
             })
 
         e.preventDefault();
