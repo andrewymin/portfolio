@@ -75,31 +75,31 @@ function Contact(props) {
         }
     
         notifyProgress();
-        notifySuccess();
+        // notifySuccess();
         // notifyError();
         // console.log(userInfo)
 
-        // document.querySelector("#contact button").disabled=true;
-        // fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Accept': 'application/json',
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify(userInfo)
-        //     }).then(res => { // this is just checking if the promise is fulfilled
-        //         if(!res.ok) {
-        //             notifyError();
-        //             console.log(res.error);
-        //             document.querySelector("#contact button").disabled=false;
-        //             return
-        //         }
-        //         notifySuccess();
-        //         setName('');
-        //         setEmail('');
-        //         setMsg('');
-        //         document.querySelector("#contact button").disabled=false;
-        //     })
+        document.querySelector("#contact button").disabled=true;
+        fetch('https://bady1hwq56.execute-api.us-west-2.amazonaws.com/dev', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userInfo)
+            }).then(res => { // this is just checking if the promise is fulfilled
+                if(!res.ok) {
+                    notifyError();
+                    console.log(res.error);
+                    document.querySelector("#contact button").disabled=false;
+                    return
+                }
+                notifySuccess();
+                setName('');
+                setEmail('');
+                setMsg('');
+                document.querySelector("#contact button").disabled=false;
+            })
 
         e.preventDefault();
     }
