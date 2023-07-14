@@ -62,6 +62,10 @@ body {
   body #intro #mainNav .menu {
     max-width: 140px;
   }
+  body #work .projects .project {
+    height: 80vh;
+    height: 80svh;
+  }
   body #work .w_intro {
     margin-left: 1rem;
   }
@@ -77,13 +81,13 @@ body {
 }
 @media (max-width: 320px) {
   body h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   body h4 {
     font-size: revert;
   }
   body #intro p {
-    font-size: 14px;
+    font-size: 0.8rem;
   }
   body #intro .social .platforms i {
     font-size: 2rem;
@@ -103,6 +107,17 @@ body {
   }
   body #emailForm form button {
     width: 50%;
+  }
+}
+@media (max-height: 670px) and (max-width: 450px) {
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  body #intro .about-me p {
+    width: 100%;
   }
 }
 .Toastify__toast--default {
