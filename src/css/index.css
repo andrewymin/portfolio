@@ -98,11 +98,7 @@ body {
   body #work .w_intro h3 {
     font-size: 1.5rem;
   }
-  body #work .projects .project {
-    height: 80vh;
-    height: 80svh;
-  }
-  body #work .projects .project img {
+  body #work img {
     height: auto;
   }
   body #emailForm form button {
