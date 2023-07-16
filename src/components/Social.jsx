@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Pdf from '../resource/Current_Resume.pdf';
+import Pdf from '../resource/Current_Resume_2023.pdf';
 
 
 function Social(props) {
