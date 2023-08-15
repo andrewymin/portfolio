@@ -93,7 +93,7 @@ body {
     font-size: 2rem;
   }
   body #mainNav .menu {
-    scale: 0.6;
+    scale: 0.5;
   }
   body #work .w_intro h3 {
     font-size: 1.5rem;
@@ -137,6 +137,23 @@ body {
 .Toastify__toast--error {
   background: rgb(66, 54, 54);
   color: #e1dfdd;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(66, 54, 54);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(78, 152, 55);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b7329;
 }
 
 h1 {

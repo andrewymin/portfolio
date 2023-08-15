@@ -26,6 +26,28 @@
     color: $white;
 }
 
+//   Width
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+//   Track 
+::-webkit-scrollbar-track {
+    background: $bark;
+
+}
+
+//   Handle 
+::-webkit-scrollbar-thumb {
+    background: $mossGreen;
+    border-radius: 10px;
+}
+
+//   Handle on hover 
+::-webkit-scrollbar-thumb:hover {
+    background: darken($color: $mossGreen, $amount: 10);
+}
+
 // .Toastify__progress-bar--error {
 //     background: $mossGreen;
 // }
