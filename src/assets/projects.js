@@ -1,6 +1,18 @@
 export const projects = [
     {
         codeType: 'webDev',
+        site: 'https://amplify.d1z00viocc7y7v.amplifyapp.com/',
+        code: 'https://github.com/andrewymin/Foodeem',
+        image: "./images/foodeem.png",
+        alt: "Recipe website",
+        title: "Foodeem 🍳",
+        description: "Recipe website that allows users to get a random recipe or search for a specific recipe.",
+        langs: ["React", "Typescript", "AWS"],
+        deploy: true,
+        left: false,
+    },
+    {
+        codeType: 'webDev',
         site: 'https://doji-sushi.vercel.app/',
         code: 'https://github.com/andrewymin/Doji_restaurant',
         image: "./images/Restaurant.png",
