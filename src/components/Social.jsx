@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import Pdf from "../resource/CV_Resume_2023.pdf";
+import Pdf from "../resource/CV_Resume_2024.pdf";
 
 function Social(props) {
   const fadeUp = (target, yStart, yEnd, startDelay) => {
