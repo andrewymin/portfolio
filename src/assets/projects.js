@@ -4,7 +4,7 @@ export const projects = [
     // site: 'https://amplify.d1z00viocc7y7v.amplifyapp.com/',
     site: "https://foodeem.vercel.app",
     code: "https://github.com/andrewymin/Foodeem",
-    image: "./images/foodeem.png",
+    image: "./images/Foodeem.png",
     alt: "Recipe website",
     title: "Foodeem 🍳",
     description:
