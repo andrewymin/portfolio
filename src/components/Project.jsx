@@ -52,6 +52,11 @@ function Project(props) {
     return () => ctx.revert();
   }, []);
 
+  const handleImgClick = (siteLink) => {
+    // console.log(siteLink);
+    window.open(siteLink, "_blank");
+  };
+
   return (
     <section ref={app} id="work">
       <div className="w_intro">
@@ -69,7 +74,11 @@ function Project(props) {
             <div className="project" key={index}>
               {project.left ? (
                 <>
-                  <img src={project.image} alt={project.alt} />
+                  <img
+                    onClick={() => handleImgClick(project.site)}
+                    src={project.image}
+                    alt={project.alt}
+                  />
                   <div className="proj_info">
                     <h2>{project.title.toLocaleUpperCase()}</h2>
                     <div className="project-about">
@@ -138,7 +147,11 @@ function Project(props) {
                       </a>
                     </div>
                   </div>
-                  <img src={project.image} alt={project.alt} />
+                  <img
+                    onClick={() => handleImgClick(project.site)}
+                    src={project.image}
+                    alt={project.alt}
+                  />
                 </>
               )}
             </div>

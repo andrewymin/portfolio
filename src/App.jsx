@@ -1,26 +1,29 @@
-import React from 'react';
+import React from "react";
 // import Nav from './components/Nav';
-import Home from './components/Home';
+import Home from "./components/Home";
 // import Work from './components/Work';
-import Project from './components/Project';
+import Project from "./components/Project";
 // import About from './components/About';
-import Contact from './components/Contact';
+import Contact from "./components/Contact";
 // import Social from './components/Social';
-import Footer from './components/Footer';
-import { BrowserRouter } from 'react-router-dom';
-import CursorTrail from './components/CursorTrail';
+import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// import CursorTrail from './components/CursorTrail';
 
 function App(props) {
-    return (
-        <BrowserRouter>
-            {/* <Nav /> */}
-            <Home />
-            <Project />
-            {/* <Work /> */}
-            <Contact />
-            <Footer />
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      {/* <Nav /> */}
+      <Home />
+      <Project />
+      {/* <Work /> */}
+      <Contact />
+      <Footer />
+      <Routes>
+        <Route path="*" element={<Navigate replace to="/" />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
