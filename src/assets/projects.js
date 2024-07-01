@@ -9,7 +9,7 @@ export const projects = [
     title: "Foodeem 🍳",
     description:
       "Recipe website that allows users to get a random recipe or search for a specific recipe.",
-    langs: ["React", "Typescript", "AWS"],
+    langs: ["React", "Typescript", "MongoDB"],
     deploy: true,
     left: false,
   },
