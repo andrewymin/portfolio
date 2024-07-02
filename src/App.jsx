@@ -13,13 +13,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 function App(props) {
   return (
     <BrowserRouter>
-      {/* <Nav /> */}
-      <Home />
+      {/* <Home />
       <Project />
-      {/* <Work /> */}
       <Contact />
-      <Footer />
+      <Footer /> */}
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
