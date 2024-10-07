@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     codeType: "webDev",
-    site: "weather-now-2-eight.vercel.app",
+    site: "https://weather-now-2-eight.vercel.app",
     code: "https://github.com/andrewymin/WeatherNow",
     image: "./images/WeatherNow.png",
     alt: "Weather App",
