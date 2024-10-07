@@ -20,16 +20,6 @@ export const works = [
   },
   {
     codeType: "webDev",
-    site: "https://complife-blog.vercel.app/",
-    code: "https://github.com/andrewymin/Blog_project",
-    image: "./images/blog.png",
-    alt: "Blog test",
-    title: "Restaurant Website",
-    description: "Test blog site using python flask.",
-    deploy: true,
-  },
-  {
-    codeType: "webDev",
     site: "weather-now-2-eight.vercel.app",
     code: "https://github.com/andrewymin/WeatherNow",
     image: "./images/WeatherNow.png",
@@ -37,6 +27,16 @@ export const works = [
     title: "Weather App",
     description:
       "React.js and Node.js app that tells you current temperature with zip code and country code.",
+    deploy: true,
+  },
+  {
+    codeType: "webDev",
+    site: "https://complife-blog.vercel.app/",
+    code: "https://github.com/andrewymin/Blog_project",
+    image: "./images/blog.png",
+    alt: "Blog test",
+    title: "Restaurant Website",
+    description: "Test blog site using python flask.",
     deploy: true,
   },
   {

@@ -28,19 +28,6 @@ export const projects = [
   },
   {
     codeType: "webDev",
-    site: "https://complife-blog.vercel.app/",
-    code: "https://github.com/andrewymin/Blog_project",
-    image: "./images/blog.png",
-    alt: "Blog test",
-    title: "Blog 💬",
-    description:
-      "A Blog that has random interesting posts. Users are able to create an account to leave comments.",
-    langs: ["Flask", "CSS", "SQL"],
-    deploy: true,
-    left: false,
-  },
-  {
-    codeType: "webDev",
     site: "weather-now-2-eight.vercel.app",
     code: "https://github.com/andrewymin/WeatherNow",
     image: "./images/WeatherNow.png",
@@ -51,6 +38,19 @@ export const projects = [
     langs: ["React", "Node", "CSS"],
     deploy: true,
     left: true,
+  },
+  {
+    codeType: "webDev",
+    site: "https://complife-blog.vercel.app/",
+    code: "https://github.com/andrewymin/Blog_project",
+    image: "./images/blog.png",
+    alt: "Blog test",
+    title: "Blog 💬",
+    description:
+      "A Blog that has random interesting posts. Users are able to create an account to leave comments.",
+    langs: ["Flask", "CSS", "SQL"],
+    deploy: true,
+    left: false,
   },
   {
     codeType: "webDev",
