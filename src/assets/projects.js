@@ -37,7 +37,7 @@ export const projects = [
       "Simple weather app that can tell you the current weather based on a zip code and country code.",
     langs: ["React", "Node", "CSS"],
     deploy: true,
-    left: true,
+    left: false,
   },
   // {
   //   codeType: "webDev",
