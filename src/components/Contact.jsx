@@ -203,7 +203,7 @@ function Contact(props) {
   return (
     <section ref={app} id="contact">
       <div className="about_me">
-        <img src={contact_img} alt="desk with computer" />
+        <img loading="lazy" src={contact_img} alt="desk with computer" />
         <div className="rotate_pic">
           <div className="circle">
             <div className="logo">👨‍💻</div>

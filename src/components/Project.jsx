@@ -75,6 +75,7 @@ function Project(props) {
               {project.left ? (
                 <>
                   <img
+                    loading="lazy"
                     onClick={() => handleImgClick(project.site)}
                     src={project.image}
                     alt={project.alt}
@@ -148,6 +149,7 @@ function Project(props) {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     onClick={() => handleImgClick(project.site)}
                     src={project.image}
                     alt={project.alt}
