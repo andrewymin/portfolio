@@ -34,7 +34,7 @@ function Social(props) {
   return (
     <div className="social" ref={app}>
       <div className="platforms">
-        <div>
+        <div className="linkedin">
           <a
             title="My Linkedin"
             href="https://www.linkedin.com/in/andrewminproglife"

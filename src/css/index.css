@@ -153,7 +153,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b7329;
+  background: rgb(58.7826086957, 114.5507246377, 41.4492753623);
 }
 
 h1 {
@@ -326,6 +326,9 @@ section {
   flex-direction: row;
   gap: 3rem;
   justify-content: start;
+}
+#intro .social .platforms .linkedin {
+  display: none;
 }
 #intro .social .platforms :nth-child(3) {
   padding-left: 4px;
