@@ -66,6 +66,7 @@ export const projects = [
   // },
   {
     codeType: "python",
+    site: "https://github.com/andrewymin/audio-to-text",
     code: "https://github.com/andrewymin/audio-to-text",
     image: "./images/speechToText.png",
     alt: "speech to text program",
