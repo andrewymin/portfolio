@@ -2,6 +2,20 @@ export const projects = [
   {
     codeType: "webDev",
     // site: 'https://amplify.d1z00viocc7y7v.amplifyapp.com/',
+    site: "https://campus-resources-psi.vercel.app/",
+    code: "https://github.com/andrewymin/campus_resources",
+    image: "./images/campus_portfolio_image.png",
+    alt: "Campus Resources Demo",
+    title: "🎓Campus Demo",
+    description:
+      "A front-end demo application that simulates a campus resource portal with role-based access, resource browsing, and announcements.",
+    langs: ["Vue.js", "Vuetify", "Typescript"],
+    deploy: true,
+    left: true,
+  },
+  {
+    codeType: "webDev",
+    // site: 'https://amplify.d1z00viocc7y7v.amplifyapp.com/',
     site: "https://foodeem.vercel.app",
     code: "https://github.com/andrewymin/Foodeem",
     image: "./images/foodeem.png",
